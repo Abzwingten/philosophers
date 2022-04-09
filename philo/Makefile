@@ -6,7 +6,7 @@
 #    By: rantario <rantario@student.21-school.ru>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/09 15:50:21 by rantario          #+#    #+#              #
-#    Updated: 2022/04/09 15:52:29 by rantario         ###   ########.fr        #
+#    Updated: 2022/04/09 16:06:33 by rantario         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,6 +55,7 @@ FG_TEXT_PRIMARY = $(NO_COLOR)$(CL_BOLD)\e[38;2;255;121;198m
 LF = \e[1K\r$(NO_COLOR)
 CRLF= \n$(LF)
 
+
 # ============================================================================ #
 #                                   RULES                                      #
 # ============================================================================ #
@@ -66,10 +67,14 @@ clean :
 	@printf "$(LF) $(FG_TEXT)Cleaning $(FG_TEXT_PRIMARY)$(NAME)'s Object files...\n"
 
 fclean : clean
-	@$(RM) $(RMFLAGS) $(NAME)
+	@$(RM) $(RMFLAGS) ../bin/$(NAME)
 	@printf "$(LF) $(FG_TEXT)Cleaning $(FG_TEXT_PRIMARY)$(NAME)\n"
 
 re : fclean all
+
+# ============================================================================ #
+#                                   ALCHEMY                                    #
+# ============================================================================ #
 
 $(OBJ_DIR) :
 	@mkdir $(OBJ_DIR)
@@ -79,10 +84,8 @@ $(OBJ_DIR)/%.o : %.c $(LIBFT_FILE) | $(OBJ_DIR)
 	@printf "$(LF) $(FG_TEXT)Create $(FG_TEXT_PRIMARY)$@ $(FG_TEXT)from $(FG_TEXT_PRIMARY)$<"
 
 $(NAME) : $(LIBFT_FILE) $(HEADERS) $(OBJS)
-	@printf "$(LF) $(FG_TEXT)Successfully Created $(FG_TEXT_PRIMARY)$@'s Object files $(FG_TEXT)!"
-	@printf "$(CRLF) $(FG_TEXT)Create $(FG_TEXT_PRIMARY)$@$(FG_TEXT)!\n"
+	@printf "$(LF) $(FG_TEXT)Successfully Created $(FG_TEXT_PRIMARY)$@'s Object files $(FG_TEXT)"
 	@$(CC) $(CFLAGS) -I $(INC_DIR) $(CLIBFLAGS) $(LIBFT_FLAGS) $(OBJS) -o $@
-	@printf "$(LF) $(FG_TEXT)Successfully Created $(FG_TEXT_PRIMARY)$@ $(FG_TEXT)!\n$(NO_COLOR)"
-
+	@printf "$(LF) $(FG_TEXT)Successfully Created $(FG_TEXT_PRIMARY)$@ $(FG_TEXT)\n$(NO_COLOR)"
 
 .PHONY: all clean fclean re bonus
