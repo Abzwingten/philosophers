@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rantario <rantario@student.21-school.ru>   +#+  +:+       +#+        */
+/*   By: rantario <rantario@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 15:50:27 by rantario          #+#    #+#             */
-/*   Updated: 2022/04/09 15:50:28 by rantario         ###   ########.fr       */
+/*   Updated: 2022/04/11 11:17:48 by rantario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,10 @@
 # include <semaphore.h>
 # include <signal.h>
 # include <sys/time.h>
+# include <fcntl.h>
 
-# define FT_ERROR		1
-# define FT_SUCCESS		0
+# define FT_ERROR 1
+# define FT_SUCCESS 0
 
 typedef struct s_philo
 {
@@ -35,7 +36,7 @@ typedef struct s_philo
 	struct s_info	*info;
 	struct timeval	last_time_to_eat;
 
-}					t_philo;
+}	t_philo;
 
 typedef struct s_info
 {
@@ -50,7 +51,7 @@ typedef struct s_info
 	sem_t			*forks;
 	t_philo			*philos;
 	struct timeval	create_at;
-}			t_info;
+}	t_info;
 
 int			init(t_info *info, int argc, char *argv[]);
 void		philo(t_philo *philo);
@@ -58,7 +59,7 @@ void		*monitor(void *argv);
 void		*finish_monitor(void *arg);
 void		*monitor_each_must_eat(void *argv);
 
-int			ft_atoi(const char *nptr);
+int			ft_atoi(const char *str);
 int			ft_puterror(char *str);
 int			ft_malloc(void *dst, size_t size);
 long long	time_to_ms(struct timeval now);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rantario <rantario@student.21-school.ru>   +#+  +:+       +#+        */
+/*   By: rantario <rantario@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 15:50:17 by rantario          #+#    #+#             */
-/*   Updated: 2022/04/09 15:50:18 by rantario         ###   ########.fr       */
+/*   Updated: 2022/04/11 11:19:17 by rantario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 long long	time_to_ms(struct timeval now)
 {
-	long long		ms;
+	long long	ms;
 
 	ms = now.tv_sec * 1000;
 	ms += now.tv_usec / 1000;
@@ -47,19 +47,19 @@ int	ft_puterror(char *str)
 	return (FT_ERROR);
 }
 
-int	ft_atoi(const char *nptr)
+int	ft_atoi(const char *str)
 {
 	int	result;
 	int	flag;
 
 	result = 0;
 	flag = 1;
-	if (*nptr == '-')
+	if (*str == '-')
 		flag *= -1;
-	while ('0' <= *nptr && *nptr <= '9')
+	while ('0' <= *str && *str <= '9')
 	{
 		result *= 10;
-		result += *nptr++ - '0';
+		result += *str++ - '0';
 	}
 	return (result * flag);
 }

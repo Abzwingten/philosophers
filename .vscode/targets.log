@@ -1,0 +1,405 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 4.3
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2020 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+ 
+
+# Make data base, printed on Mon Apr 11 11:06:29 2022
+
+# Variables
+
+# environment
+GDK_BACKEND = x11
+# environment
+LC_ALL = C
+# environment
+NO_AT_BRIDGE = 1
+# environment
+GTK_RC_FILES = /etc/gtk/gtkrc:/home/matt/.gtkrc:/home/matt/.config/gtkrc
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-58dddf29-c5d7-44d3-ac9f-504326438f46.sock
+# environment
+KONSOLE_DBUS_SERVICE = :1.44
+# environment
+LC_NAME = ru_RU.UTF-8
+# environment
+LC_NUMERIC = ru_RU.UTF-8
+# environment
+VSCODE_CWD = /home/matt/Documents/GIT/ECOLE42/philosophers
+# environment
+FZF_CTRL_T_OPTS = --preview 'command bat --color=always --line-range :500 {}' 
+# environment
+WINDOWID = 104857607
+# environment
+LESS_TERMCAP_me = [0m
+# environment
+LC_ADDRESS = ru_RU.UTF-8
+# default
+MAKE_COMMAND := make
+# environment
+GOPATH = /home/matt/Documents/GIT/go
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+KONSOLE_VERSION = 211203
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# default
+.VARIABLES := 
+# environment
+PWD = /home/matt/Documents/GIT/ECOLE42/philosophers
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+MAIL = /var/spool/mail/matt
+# environment
+OLDPWD = /home/matt/Documents/GIT/ECOLE42
+# environment
+KONSOLE_DBUS_WINDOW = /Windows/1
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+VSCODE_LOG_STACK = false
+# automatic
+%F = $(notdir $%)
+# environment
+VSCODE_CODE_CACHE_PATH = /home/matt/.config/Code - OSS/CachedData/e18005f0f1b33c29e81d732535d8c0e47cafb0b5
+# environment
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session1
+# environment
+LANG = C
+# environment
+XAUTHORITY = /home/matt/.Xauthority
+# default
+.LOADED := 
+# environment
+LESS_TERMCAP_md = [1;31m
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# environment
+COLORFGBG = 15;0
+# makefile
+MAKEFLAGS = pqrR
+# environment
+LESS_TERMCAP_so = [7m
+# makefile
+CURDIR := /home/matt/Documents/GIT/ECOLE42/philosophers
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+LESS_TERMCAP_ue = [0m
+# environment
+PAM_KWALLET5_LOGIN = /run/user/1000/kwallet5.socket
+# environment
+MFLAGS = -pqrR
+# environment
+SSH_AUTH_SOCK = /tmp/ssh-XXXXXXwQ5IRB/agent.2279
+# default
+.SHELLFLAGS := -c
+# environment
+XDG_CONFIG_DIRS = /home/matt/.config/kdedefaults:/etc/xdg
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+XCURSOR_THEME = breeze_cursors
+# environment
+XDG_SESSION_DESKTOP = KDE
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST := Makefile
+# automatic
+@F = $(notdir $@)
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+VSCODE_PID = 12562
+# environment
+XDG_SESSION_TYPE = x11
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+FZF_DEFAULT_COMMAND = command rg -uu -g '!.git' --files
+# environment
+SESSION_MANAGER = local/mattartix:@/tmp/.ICE-unix/1506,unix/mattartix:/tmp/.ICE-unix/1506
+# automatic
+*F = $(notdir $*)
+# environment
+QT_QPA_PLATFORMTHEME = gtk
+# environment
+CHROME_DESKTOP = code-oss.desktop
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:abstract=/tmp/dbus-NRjilsbGlP,guid=38bfc02dadb5d2d433cbd2f06253c039
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# makefile
+SHELL = /bin/sh
+# environment
+LESS_TERMCAP_us = [1;32m
+# default
+MAKECMDGOALS := all
+# environment
+SHLVL = 1
+# environment
+PROFILEHOME = /home/matt
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# environment
+PATH = /usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/go/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+# environment
+LESS_TERMCAP_se = [27m
+# default
+MAKEFILES := 
+# environment
+LANGUAGE = 
+# environment
+LC_MONETARY = ru_RU.UTF-8
+# environment
+MOTD_SHOWN = pam
+# automatic
+^F = $(notdir $^)
+# environment
+LC_TIME = ru_RU.UTF-8
+# environment
+LESS_TERMCAP_mb = [1;31m
+# environment
+VSCODE_LOG_NATIVE = false
+# environment
+LC_TELEPHONE = ru_RU.UTF-8
+# automatic
+?F = $(notdir $?)
+# environment
+KDE_APPLICATIONS_AS_SCOPE = 1
+# environment
+XDG_SEAT = seat0
+# environment
+XDG_CURRENT_DESKTOP = KDE
+# environment
+LS_COLORS = di=1;34:ln=35:so=32:pi=33:ex=31:bd=1;36:cd=1;33:su=30;41:sg=30;46:tw=30;42:ow=30;43
+# automatic
++F = $(notdir $+)
+# environment
+XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
+# environment
+DESKTOP_SESSION = plasma
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = KDE
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+GREP_COLOR = 37;45
+# environment
+GREP_COLORS = mt=37;45
+# environment
+LOGNAME = matt
+# environment
+FZF_CTRL_T_COMMAND = command rg -uu -g '!.git' --files
+# environment
+XDG_VTNR = 7
+# makefile
+.DEFAULT_GOAL := all
+# environment
+DISPLAY = :0
+# environment
+GTK_MODULES = canberra-gtk-module
+# environment
+USER = matt
+# default
+MAKE_VERSION := 4.3
+# environment
+KDE_SESSION_UID = 1000
+# environment
+KONSOLE_DBUS_SESSION = /Sessions/2
+# environment
+LC_MEASUREMENT = ru_RU.UTF-8
+# environment
+QT_STYLE_OVERRIDE = gtk2
+# environment
+SSH_AGENT_PID = 2280
+# environment
+PAGER = less
+# environment
+_ = /usr/bin/make
+# environment
+LC_PAPER = ru_RU.UTF-8
+# environment
+MOZ_PLUGIN_PATH = /usr/lib/mozilla/plugins
+# environment
+XDG_RUNTIME_DIR = /run/user/1000
+# environment
+COLORTERM = truecolor
+# environment
+VISUAL = vim
+# environment
+XDG_SESSION_CLASS = user
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+GTK2_RC_FILES = /etc/gtk-2.0/gtkrc:/home/matt/.gtkrc-2.0:/home/matt/.config/gtkrc-2.0
+# environment
+HOME = /home/matt
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+VSCODE_IPC_HOOK = /run/user/1000/vscode-845cc839-1.66.0-main.sock
+# environment
+TERM = xterm-256color
+# environment
+XDG_SESSION_ID = 4
+# environment
+XCURSOR_SIZE = 24
+# default
+.RECIPEPREFIX := 
+# automatic
+<F = $(notdir $<)
+# default
+SUFFIXES := 
+# environment
+QT_AUTO_SCREEN_SCALE_FACTOR = 0
+# environment
+VSCODE_CLI = 1
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
+SHELL_SESSION_ID = 7ff1ac9a13bf4bbea6b8ae3c08ea2d86
+# environment
+KDE_SESSION_VERSION = 5
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink guile load
+# environment
+KDE_FULL_SESSION = true
+# environment
+QTWEBENGINE_CHROMIUM_FLAGS = -blink-settings=darkModeEnabled=true -enable-features=OverlayScrollbar,OverlayScrollbarFlashAfterAnyScrollUpdate,OverlayScrollbarFlashWhenMouseEnter
+# environment
+LC_IDENTIFICATION = ru_RU.UTF-8
+# variable set hash-table stats:
+# Load=136/1024=13%, Rehash=0, Collisions=17/169=10%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 2081, inode 418): 8 files, no impossibilities.
+
+# 8 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+ 
+#  Last modified 2022-04-11 10:24:35.2357027
+#  File has been updated.
+#  Successfully updated.
+
+bonus:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 19):
+	@mkdir -p bin
+	make -C philo_bonus
+	@mv philo_bonus/philo_bonus bin/
+	
+
+clean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 24):
+	make -C philo clean
+	make -C philo_bonus clean
+
+re:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 32):
+	make fclean all bonus
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+all:
+#  Command line target.
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := all
+# automatic
+# * := 
+# automatic
+# < := 
+# automatic
+# + := 
+# automatic
+# % := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# automatic
+# | := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/11=9%
+#  recipe to execute (from 'Makefile', line 14):
+	@mkdir -p bin
+	make -C philo
+	@mv philo/philo bin/
+	
+
+fclean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 28):
+	make -C philo fclean
+	make -C philo_bonus fclean
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# files hash-table stats:
+# Load=8/1024=1%, Rehash=0, Collisions=0/20=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 17 / storage = 144 B / avg = 8 B
+# current buf: size = 8162 B / used = 144 B / count = 17 / avg = 8 B
+
+# strcache performance: lookups = 28 / hit rate = 39%
+# hash-table stats:
+# Load=17/8192=0%, Rehash=0, Collisions=0/28=0%
+# Finished Make data base on Mon Apr 11 11:06:29 2022
+
+ 
