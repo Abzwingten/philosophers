@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rantario <rantario@student.21-school.ru>   +#+  +:+       +#+         #
+#    By: rantario <rantario@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/09 15:50:21 by rantario          #+#    #+#              #
-#    Updated: 2022/04/09 16:06:33 by rantario         ###   ########.fr        #
+#    Updated: 2022/04/11 11:41:34 by rantario         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,6 @@ ifeq ($(DEBUG),true)
 	CFLAGS += -g
 endif
 
-RM = rm
 RMFLAGS = -rf
 
 INC_DIR = include
@@ -77,7 +76,7 @@ re : fclean all
 # ============================================================================ #
 
 $(OBJ_DIR) :
-	@mkdir $(OBJ_DIR)
+	@mkdir -p $(OBJ_DIR)
 
 $(OBJ_DIR)/%.o : %.c $(LIBFT_FILE) | $(OBJ_DIR)
 	@$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@

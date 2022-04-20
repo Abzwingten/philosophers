@@ -6,7 +6,7 @@
 /*   By: rantario <rantario@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 15:49:58 by rantario          #+#    #+#             */
-/*   Updated: 2022/04/11 11:15:09 by rantario         ###   ########.fr       */
+/*   Updated: 2022/04/11 11:34:05 by rantario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <unistd.h>
 # include <pthread.h>
 # include <sys/time.h>
+# include <sys/wait.h>
 
 # define FT_ERROR 1
 # define FT_SUCCESS 0

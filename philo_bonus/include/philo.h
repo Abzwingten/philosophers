@@ -6,7 +6,7 @@
 /*   By: rantario <rantario@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 15:50:27 by rantario          #+#    #+#             */
-/*   Updated: 2022/04/11 11:17:48 by rantario         ###   ########.fr       */
+/*   Updated: 2022/04/11 11:42:59 by rantario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 # include <semaphore.h>
 # include <signal.h>
 # include <sys/time.h>
+# include <sys/types.h> 
+# include <sys/wait.h> 
 # include <fcntl.h>
 
 # define FT_ERROR 1

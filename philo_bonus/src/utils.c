@@ -6,7 +6,7 @@
 /*   By: rantario <rantario@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 15:51:11 by rantario          #+#    #+#             */
-/*   Updated: 2022/04/11 11:09:22 by rantario         ###   ########.fr       */
+/*   Updated: 2022/04/20 11:20:28 by rantario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ int	ft_atoi(const char *str)
 	flag = 1;
 	if (*str == '-')
 		flag *= -1;
+	str++;
 	while ('0' <= *str && *str <= '9')
 	{
 		result *= 10;

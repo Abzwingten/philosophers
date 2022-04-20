@@ -5,9 +5,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
-# Make data base, printed on Mon Apr 11 11:06:29 2022
+# Make data base, printed on Wed Apr 20 11:19:18 2022
 
 # Variables
 
@@ -20,7 +19,7 @@ NO_AT_BRIDGE = 1
 # environment
 GTK_RC_FILES = /etc/gtk/gtkrc:/home/matt/.gtkrc:/home/matt/.config/gtkrc
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-58dddf29-c5d7-44d3-ac9f-504326438f46.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-f27ef3de-25fa-4d4a-9869-ba9bb15d839b.sock
 # environment
 KONSOLE_DBUS_SERVICE = :1.44
 # environment
@@ -32,7 +31,7 @@ VSCODE_CWD = /home/matt/Documents/GIT/ECOLE42/philosophers
 # environment
 FZF_CTRL_T_OPTS = --preview 'command bat --color=always --line-range :500 {}' 
 # environment
-WINDOWID = 104857607
+WINDOWID = 106954759
 # environment
 LESS_TERMCAP_me = [0m
 # environment
@@ -56,7 +55,7 @@ PWD = /home/matt/Documents/GIT/ECOLE42/philosophers
 # environment
 MAIL = /var/spool/mail/matt
 # environment
-OLDPWD = /home/matt/Documents/GIT/ECOLE42
+OLDPWD = /home/matt/Documents/GIT
 # environment
 KONSOLE_DBUS_WINDOW = /Windows/1
 # automatic
@@ -100,7 +99,7 @@ PAM_KWALLET5_LOGIN = /run/user/1000/kwallet5.socket
 # environment
 MFLAGS = -pqrR
 # environment
-SSH_AUTH_SOCK = /tmp/ssh-XXXXXXwQ5IRB/agent.2279
+SSH_AUTH_SOCK = /tmp/ssh-XXXXXXjTH4ew/agent.2372
 # default
 .SHELLFLAGS := -c
 # environment
@@ -118,15 +117,17 @@ MAKEFILE_LIST := Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 12562
+VSCODE_PID = 12677
 # environment
 XDG_SESSION_TYPE = x11
+# environment
+CUDA_PATH = /opt/cuda
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
 FZF_DEFAULT_COMMAND = command rg -uu -g '!.git' --files
 # environment
-SESSION_MANAGER = local/mattartix:@/tmp/.ICE-unix/1506,unix/mattartix:/tmp/.ICE-unix/1506
+SESSION_MANAGER = local/mattartix:@/tmp/.ICE-unix/1578,unix/mattartix:/tmp/.ICE-unix/1578
 # automatic
 *F = $(notdir $*)
 # environment
@@ -134,7 +135,7 @@ QT_QPA_PLATFORMTHEME = gtk
 # environment
 CHROME_DESKTOP = code-oss.desktop
 # environment
-DBUS_SESSION_BUS_ADDRESS = unix:abstract=/tmp/dbus-NRjilsbGlP,guid=38bfc02dadb5d2d433cbd2f06253c039
+DBUS_SESSION_BUS_ADDRESS = unix:abstract=/tmp/dbus-NHMfuur73V,guid=8af166e7f84fb8c636df5a1f625fae07
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # environment
@@ -156,7 +157,7 @@ MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = /usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/go/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+PATH = /usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/go/bin:/opt/android-sdk/platform-tools:/opt/cuda/bin:/opt/cuda/nsight_compute:/opt/cuda/nsight_systems/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/bin:/home/matt/Documents/GIT/go/bin
 # environment
 LESS_TERMCAP_se = [27m
 # default
@@ -173,6 +174,8 @@ MOTD_SHOWN = pam
 LC_TIME = ru_RU.UTF-8
 # environment
 LESS_TERMCAP_mb = [1;31m
+# environment
+GOBIN = /home/matt/Documents/GIT/go/bin
 # environment
 VSCODE_LOG_NATIVE = false
 # environment
@@ -220,13 +223,13 @@ MAKE_VERSION := 4.3
 # environment
 KDE_SESSION_UID = 1000
 # environment
-KONSOLE_DBUS_SESSION = /Sessions/2
+KONSOLE_DBUS_SESSION = /Sessions/1
 # environment
 LC_MEASUREMENT = ru_RU.UTF-8
 # environment
 QT_STYLE_OVERRIDE = gtk2
 # environment
-SSH_AGENT_PID = 2280
+SSH_AGENT_PID = 2373
 # environment
 PAGER = less
 # environment
@@ -272,8 +275,9 @@ VSCODE_CLI = 1
 # environment
 ELECTRON_NO_ATTACH_CONSOLE = 1
 # environment
-SHELL_SESSION_ID = 7ff1ac9a13bf4bbea6b8ae3c08ea2d86
+SHELL_SESSION_ID = 431e3fb908d048d799d100cde0fb373b
 # environment
+ 
 KDE_SESSION_VERSION = 5
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink guile load
@@ -284,7 +288,7 @@ QTWEBENGINE_CHROMIUM_FLAGS = -blink-settings=darkModeEnabled=true -enable-featur
 # environment
 LC_IDENTIFICATION = ru_RU.UTF-8
 # variable set hash-table stats:
-# Load=136/1024=13%, Rehash=0, Collisions=17/169=10%
+# Load=138/1024=13%, Rehash=0, Collisions=18/171=11%
 
 # Pattern-specific Variable Values
 
@@ -292,9 +296,9 @@ LC_IDENTIFICATION = ru_RU.UTF-8
 
 # Directories
 
-# . (device 2081, inode 418): 8 files, no impossibilities.
+# . (device 2081, inode 418): 9 files, no impossibilities.
 
-# 8 files, no impossibilities in 1 directories.
+# 9 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -305,8 +309,7 @@ LC_IDENTIFICATION = ru_RU.UTF-8
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
- 
-#  Last modified 2022-04-11 10:24:35.2357027
+#  Last modified 2022-04-11 11:21:50.06144
 #  File has been updated.
 #  Successfully updated.
 
@@ -316,7 +319,7 @@ bonus:
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 19):
 	@mkdir -p bin
-	make -C philo_bonus
+	@make -C philo_bonus
 	@mv philo_bonus/philo_bonus bin/
 	
 
@@ -368,7 +371,7 @@ all:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
 #  recipe to execute (from 'Makefile', line 14):
 	@mkdir -p bin
-	make -C philo
+	@make -C philo
 	@mv philo/philo bin/
 	
 
@@ -394,12 +397,12 @@ fclean:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 17 / storage = 144 B / avg = 8 B
-# current buf: size = 8162 B / used = 144 B / count = 17 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 18 / storage = 148 B / avg = 8 B
+# current buf: size = 8162 B / used = 148 B / count = 18 / avg = 8 B
 
-# strcache performance: lookups = 28 / hit rate = 39%
+# strcache performance: lookups = 29 / hit rate = 37%
 # hash-table stats:
-# Load=17/8192=0%, Rehash=0, Collisions=0/28=0%
-# Finished Make data base on Mon Apr 11 11:06:29 2022
+# Load=18/8192=0%, Rehash=0, Collisions=0/29=0%
+# Finished Make data base on Wed Apr 20 11:19:18 2022
 
  
