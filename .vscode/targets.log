@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Apr 20 11:19:18 2022
+# Make data base, printed on Thu Apr 21 14:23:34 2022
 
 # Variables
 
@@ -19,7 +19,7 @@ NO_AT_BRIDGE = 1
 # environment
 GTK_RC_FILES = /etc/gtk/gtkrc:/home/matt/.gtkrc:/home/matt/.config/gtkrc
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-f27ef3de-25fa-4d4a-9869-ba9bb15d839b.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-3291aa1c-0b1a-4614-a8f8-ec57edb624e9.sock
 # environment
 KONSOLE_DBUS_SERVICE = :1.44
 # environment
@@ -99,7 +99,7 @@ PAM_KWALLET5_LOGIN = /run/user/1000/kwallet5.socket
 # environment
 MFLAGS = -pqrR
 # environment
-SSH_AUTH_SOCK = /tmp/ssh-XXXXXXjTH4ew/agent.2372
+SSH_AUTH_SOCK = /tmp/ssh-XXXXXXK4AHwL/agent.2387
 # default
 .SHELLFLAGS := -c
 # environment
@@ -117,7 +117,7 @@ MAKEFILE_LIST := Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 12677
+VSCODE_PID = 30781
 # environment
 XDG_SESSION_TYPE = x11
 # environment
@@ -127,7 +127,7 @@ CUDA_PATH = /opt/cuda
 # environment
 FZF_DEFAULT_COMMAND = command rg -uu -g '!.git' --files
 # environment
-SESSION_MANAGER = local/mattartix:@/tmp/.ICE-unix/1578,unix/mattartix:/tmp/.ICE-unix/1578
+SESSION_MANAGER = local/mattartix:@/tmp/.ICE-unix/1577,unix/mattartix:/tmp/.ICE-unix/1577
 # automatic
 *F = $(notdir $*)
 # environment
@@ -135,7 +135,7 @@ QT_QPA_PLATFORMTHEME = gtk
 # environment
 CHROME_DESKTOP = code-oss.desktop
 # environment
-DBUS_SESSION_BUS_ADDRESS = unix:abstract=/tmp/dbus-NHMfuur73V,guid=8af166e7f84fb8c636df5a1f625fae07
+DBUS_SESSION_BUS_ADDRESS = unix:abstract=/tmp/dbus-BSc93Mw1DE,guid=031efe2ab5e74e2d644da9b66260f8e0
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # environment
@@ -229,7 +229,7 @@ LC_MEASUREMENT = ru_RU.UTF-8
 # environment
 QT_STYLE_OVERRIDE = gtk2
 # environment
-SSH_AGENT_PID = 2373
+SSH_AGENT_PID = 2388
 # environment
 PAGER = less
 # environment
@@ -275,9 +275,8 @@ VSCODE_CLI = 1
 # environment
 ELECTRON_NO_ATTACH_CONSOLE = 1
 # environment
-SHELL_SESSION_ID = 431e3fb908d048d799d100cde0fb373b
+SHELL_SESSION_ID = 82a8928baff1406e85a0f50e7a330815
 # environment
- 
 KDE_SESSION_VERSION = 5
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink guile load
@@ -296,9 +295,9 @@ LC_IDENTIFICATION = ru_RU.UTF-8
 
 # Directories
 
-# . (device 2081, inode 418): 9 files, no impossibilities.
+# . (device 2081, inode 418): 7 files, no impossibilities.
 
-# 9 files, no impossibilities in 1 directories.
+# 7 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -309,7 +308,7 @@ LC_IDENTIFICATION = ru_RU.UTF-8
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-04-11 11:21:50.06144
+#  Last modified 2022-04-21 13:58:06.8818387
 #  File has been updated.
 #  Successfully updated.
 
@@ -319,7 +318,7 @@ bonus:
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 19):
 	@mkdir -p bin
-	@make -C philo_bonus
+	@make -C philo_bonus --no-print-directory
 	@mv philo_bonus/philo_bonus bin/
 	
 
@@ -328,15 +327,15 @@ clean:
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 24):
-	make -C philo clean
-	make -C philo_bonus clean
+	@make -C philo clean --no-print-directory
+	@make -C philo_bonus clean --no-print-directory
 
 re:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 32):
-	make fclean all bonus
+#  recipe to execute (from 'Makefile', line 33):
+	@make fclean all bonus --no-print-directory
 
 # Not a target:
 .DEFAULT:
@@ -371,7 +370,7 @@ all:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
 #  recipe to execute (from 'Makefile', line 14):
 	@mkdir -p bin
-	@make -C philo
+	@make -C philo --no-print-directory
 	@mv philo/philo bin/
 	
 
@@ -380,8 +379,9 @@ fclean:
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 28):
-	make -C philo fclean
-	make -C philo_bonus fclean
+	@make -C philo fclean --no-print-directory
+	@make -C philo_bonus fclean --no-print-directory
+	@rm -rf bin
 
 # Not a target:
 .SUFFIXES:
@@ -397,12 +397,13 @@ fclean:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 18 / storage = 148 B / avg = 8 B
-# current buf: size = 8162 B / used = 148 B / count = 18 / avg = 8 B
+ 
+# strcache buffers: 1 (0) / strings = 16 / storage = 122 B / avg = 7 B
+# current buf: size = 8162 B / used = 122 B / count = 16 / avg = 7 B
 
-# strcache performance: lookups = 29 / hit rate = 37%
+# strcache performance: lookups = 27 / hit rate = 40%
 # hash-table stats:
-# Load=18/8192=0%, Rehash=0, Collisions=0/29=0%
-# Finished Make data base on Wed Apr 20 11:19:18 2022
+# Load=16/8192=0%, Rehash=0, Collisions=0/27=0%
+# Finished Make data base on Thu Apr 21 14:23:34 2022
 
  

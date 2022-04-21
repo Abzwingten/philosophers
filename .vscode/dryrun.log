@@ -1,7 +1,7 @@
-make --dry-run --always-make --keep-going --print-directory
+make --dry-run --keep-going --print-directory
 make: Entering directory '/home/matt/Documents/GIT/ECOLE42/philosophers'
 mkdir -p bin
-make -C philo
+make -C philo --no-print-directory
 mv philo/philo bin/
 make: Leaving directory '/home/matt/Documents/GIT/ECOLE42/philosophers'
  
