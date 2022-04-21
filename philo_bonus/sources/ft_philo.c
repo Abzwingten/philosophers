@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_philo.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rantario <rantario@student.21-school.ru    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/21 18:48:10 by rantario          #+#    #+#             */
+/*   Updated: 2022/04/21 18:48:11 by rantario         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "philo_bonus.h"
 
 void	philo_init(t_philo *philo, t_table *table, int index)
@@ -16,7 +28,7 @@ void	*philo_routine(void *data)
 
 	philo = (t_philo *)data;
 	if (philo->id % 2 == 0)
-		ft_usleep(10);
+		ft_usleep((float)philo->table->time_to_eat * 0.9 + 1);
 	while (!philo->table->death)
 	{
 		philo_eat(philo);

@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Apr 21 14:23:34 2022
+# Make data base, printed on Thu Apr 21 18:47:40 2022
 
 # Variables
 
@@ -19,7 +19,7 @@ NO_AT_BRIDGE = 1
 # environment
 GTK_RC_FILES = /etc/gtk/gtkrc:/home/matt/.gtkrc:/home/matt/.config/gtkrc
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-3291aa1c-0b1a-4614-a8f8-ec57edb624e9.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-7d4f4b26-07af-463a-aabb-61347e759506.sock
 # environment
 KONSOLE_DBUS_SERVICE = :1.44
 # environment
@@ -104,6 +104,7 @@ SSH_AUTH_SOCK = /tmp/ssh-XXXXXXK4AHwL/agent.2387
 .SHELLFLAGS := -c
 # environment
 XDG_CONFIG_DIRS = /home/matt/.config/kdedefaults:/etc/xdg
+ 
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # environment
@@ -295,9 +296,9 @@ LC_IDENTIFICATION = ru_RU.UTF-8
 
 # Directories
 
-# . (device 2081, inode 418): 7 files, no impossibilities.
+# . (device 2081, inode 418): 8 files, no impossibilities.
 
-# 7 files, no impossibilities in 1 directories.
+# 8 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -397,13 +398,13 @@ fclean:
 
 # No general ('VPATH' variable) search path.
 
- 
-# strcache buffers: 1 (0) / strings = 16 / storage = 122 B / avg = 7 B
-# current buf: size = 8162 B / used = 122 B / count = 16 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 17 / storage = 126 B / avg = 7 B
+# current buf: size = 8162 B / used = 126 B / count = 17 / avg = 7 B
 
-# strcache performance: lookups = 27 / hit rate = 40%
+# strcache performance: lookups = 28 / hit rate = 39%
 # hash-table stats:
-# Load=16/8192=0%, Rehash=0, Collisions=0/27=0%
-# Finished Make data base on Thu Apr 21 14:23:34 2022
+ 
+# Load=17/8192=0%, Rehash=0, Collisions=0/28=0%
+# Finished Make data base on Thu Apr 21 18:47:40 2022
 
  

@@ -1,12 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_philo_actions.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rantario <rantario@student.21-school.ru    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/21 18:47:12 by rantario          #+#    #+#             */
+/*   Updated: 2022/04/21 18:47:13 by rantario         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "philo.h"
 
 void	philo_use_fork(t_philo *philo,
 					int (*mutex_action)(), char *message)
 {
 	mutex_action(philo->lfork);
-	print(philo, message);
 	mutex_action(philo->rfork);
 	print(philo, message);
+	print(philo, message);
+
 }
 
 void	philo_eat(t_philo *philo)
