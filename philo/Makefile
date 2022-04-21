@@ -17,7 +17,7 @@ SRCS			:=	main.c \
 OBJS			:=	$(addprefix ${OBJECTS}/, $(SRCS:.c=.o))
 
 CC				:=	clang
-CFLAGS			:=	-Wall -Wextra -Werror #-g #-fsanitize=address
+CFLAGS			:=	-Wall -Wextra -Werror -std=gnu99 #-g #-fsanitize=address
 CINCLUDES		:=	-I ${INCLUDES}
 CDEPENDENCIES	:=	-pthread -lpthread
 

@@ -3,5 +3,6 @@ make: Entering directory '/home/matt/Documents/GIT/ECOLE42/philosophers'
 mkdir -p bin
 make -C philo --no-print-directory
 mv philo/philo bin/
+ 
 make: Leaving directory '/home/matt/Documents/GIT/ECOLE42/philosophers'
  

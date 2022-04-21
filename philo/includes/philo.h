@@ -21,7 +21,7 @@
 # define HAS_DIED "died"
 
 /************************* STRUCTURES ************************ */
-typedef struct timeval	t_timeval;
+typedef struct timespec	t_timespec;
 
 typedef struct s_philo
 {
@@ -51,12 +51,10 @@ typedef struct s_table
 	int				min_to_eat;
 	int				death;
 
-	t_timeval		time;
+	t_timespec		time;
 	pthread_mutex_t	is_dying;
 	pthread_mutex_t	is_printing;
 }	t_table;
-
-
 
 /* ********************** INPUT / OUTPUT ********************** */
 void		print(t_philo *philo, char *message);
@@ -90,8 +88,8 @@ size_t		philo_check_eat(t_table *table);
 void		philo_check_death(t_table *table);
 
 /**************************** TIME *************************** */
-t_timeval	time_get_now(void);
-size_t		time_get_millis(struct timeval time);
+t_timespec	time_get_now(void);
+size_t		time_get_millis(struct timespec time);
 size_t		time_get_millis_now(void);
 size_t		time_get_millis_from_start(t_table *table);
 void		ft_usleep(size_t usec);

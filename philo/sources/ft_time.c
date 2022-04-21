@@ -1,16 +1,16 @@
 #include "philo.h"
 
-t_timeval	time_get_now(void)
+t_timespec	time_get_now(void)
 {
-	t_timeval	time;
+	t_timespec	time;
 
-	gettimeofday(&time, NULL);
+	clock_gettime(CLOCK_REALTIME, &time);
 	return (time);
 }
 
-size_t	time_get_millis(t_timeval time)
+size_t	time_get_millis(t_timespec time)
 {
-	return (time.tv_sec * 1000 + time.tv_usec / 1000);
+	return (time.tv_nsec / 1000000);
 }
 
 size_t	time_get_millis_now(void)
