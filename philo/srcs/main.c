@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rantario <rantario@student.21-school.ru>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/26 16:05:01 by rantario          #+#    #+#             */
+/*   Updated: 2022/04/26 16:05:02 by rantario         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "philo.h"
 
 int	create_threads(t_thr_philo *philos, t_philo *philo)
@@ -39,16 +51,16 @@ int	philo_destroy(t_thr_philo *philos)
 			free(philos);
 			return (5);
 		}
-		pthread_mutex_destroy(&philos[i].mut_frk);
+		pthread_mutex_destroy(&philos[i].mut_fork);
 		pthread_mutex_destroy(&philos[i].mut_death);
 		i++;
 	}
 	i = 0;
 	if (pthread_join(philos->philo->th_die, NULL))
 		i = 5;
-	pthread_mutex_destroy(&philos->philo->mt_mess);
+	pthread_mutex_destroy(&philos->philo->mut_message);
 	pthread_mutex_destroy(&philos->philo->mut_eat_c);
-	pthread_mutex_destroy(&philos->philo->mt_exit);
+	pthread_mutex_destroy(&philos->philo->mut_exit);
 	free(philos);
 	return (i);
 }
@@ -61,9 +73,9 @@ t_thr_philo	*philo_init(int argc, char **argv, t_philo *philo)
 	i = -1;
 	if (parser(argc, argv, philo))
 		return (NULL);
-	if (pthread_mutex_init(&philo->mt_mess, NULL) \
+	if (pthread_mutex_init(&philo->mut_message, NULL) \
 	|| pthread_mutex_init(&philo->mut_eat_c, NULL) \
-	|| pthread_mutex_init(&philo->mt_exit, NULL))
+	|| pthread_mutex_init(&philo->mut_exit, NULL))
 		return (NULL);
 	philos = (t_thr_philo *)malloc(sizeof(t_thr_philo) * philo->num_philos);
 	if (!philos)
@@ -72,7 +84,7 @@ t_thr_philo	*philo_init(int argc, char **argv, t_philo *philo)
 	philo->start_t = (philo->tv.tv_sec * 1000) + (philo->tv.tv_usec / 1000);
 	while (++i < philo->num_philos)
 	{
-		if (pthread_mutex_init(&philos[i].mut_frk, NULL) \
+		if (pthread_mutex_init(&philos[i].mut_fork, NULL) \
 		|| pthread_mutex_init(&philos[i].mut_death, NULL))
 		{
 			free(philos);

@@ -6,15 +6,14 @@
 /*   By: rantario <rantario@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 18:46:52 by rantario          #+#    #+#             */
-/*   Updated: 2022/04/26 15:22:14 by rantario         ###   ########.fr       */
+/*   Updated: 2022/04/26 16:04:48 by rantario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/* ************************* INCLUDES ************************* */
 
 #ifndef PHILO_H
 # define PHILO_H
 
+/* ************************* INCLUDES ************************* */
 # include <stdio.h>
 # include <stdlib.h>
 # include <pthread.h>
@@ -36,15 +35,15 @@ typedef struct s_philo
 	t_ull			start_t;
 	struct timeval	tv;
 	pthread_t		th_die;
-	pthread_mutex_t	mt_mess;
+	pthread_mutex_t	mut_message;
 	pthread_mutex_t	mut_eat_c;
-	pthread_mutex_t	mt_exit;
+	pthread_mutex_t	mut_exit;
 }	t_philo;
 
 typedef struct s_thr_philo
 {
 	pthread_t		philo_loop;
-	pthread_mutex_t	mut_frk;
+	pthread_mutex_t	mut_fork;
 	pthread_mutex_t	mut_death;
 	int				number;
 	int				eat_num;
@@ -62,6 +61,7 @@ int			iterate_args(int argc, char **argv);
 int			ft_isdigit(int c);
 int			ft_atoi(const char *str, int *overflow);
 int			is_space(const char *str, int *sign, int *overflow);
+void		print_message(t_thr_philo *philos, char *str, int flag);
 
 /* ************************* THREADS ************************** */
 int			create_threads(t_thr_philo *philos, t_philo *philo);
@@ -72,9 +72,8 @@ void		philo_sleep(t_thr_philo *phil);
 void		*philo_loop(void *phil);
 void		thr_eating(t_thr_philo *tmp_phil);
 int			philo_destroy(t_thr_philo *philos);
-void		try_take_fork(pthread_mutex_t *mut_frk, t_thr_philo *philos);
+void		try_take_fork(pthread_mutex_t *mut_fork, t_thr_philo *philos);
 void		*take_forks(t_thr_philo *tmp_phil);
-void		print_message(t_thr_philo *philos, char *str, int flag);
 
 /* ************************** DEATH *************************** */
 void		*death_1(void *philos);

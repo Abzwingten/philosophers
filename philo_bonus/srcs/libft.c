@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rantario <rantario@student.21-school.ru>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/26 16:06:22 by rantario          #+#    #+#             */
+/*   Updated: 2022/04/26 16:06:57 by rantario         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "philo_bonus.h"
 
 int	ft_isdigit(int c)
@@ -54,17 +66,14 @@ int	ft_error(int err)
 	return (err);
 }
 
-void	print_m(t_thr_philo *philos, char *str, int flag)
+void	print_message(t_thr_philo *philos, char *str, int flag)
 {
-	pthread_mutex_lock(&philos->philo->mt_mess);
-	pthread_mutex_lock(&philos->philo->mt_exit);
-	if (philos->philo->exit && flag)
-	{
-		pthread_mutex_unlock(&philos->philo->mt_exit);
-		pthread_mutex_unlock(&philos->philo->mt_mess);
-		return ;
-	}
-	pthread_mutex_unlock(&philos->philo->mt_exit);
+	if (sem_wait(philos->philo->message))
+		exit(7);
 	printf("%llu %d %s\n", get_time(philos->philo), philos->number, str);
-	pthread_mutex_unlock(&philos->philo->mt_mess);
+	if (flag)
+	{
+		if (sem_post(philos->philo->message))
+			exit(7);
+	}
 }

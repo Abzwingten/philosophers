@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   philo_proc.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rantario <rantario@student.21-school.ru>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/26 16:06:36 by rantario          #+#    #+#             */
+/*   Updated: 2022/04/26 16:06:37 by rantario         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "philo_bonus.h"
 
 void	philo_process(t_thr_philo *philos)
@@ -9,7 +21,7 @@ void	philo_process(t_thr_philo *philos)
 		exit(5);
 	if (pthread_detach(philos->th_die))
 		exit(5);
-	if (pthread_mutex_init(&philos->mt_die, NULL))
+	if (pthread_mutex_init(&philos->mut_death, NULL))
 		exit(5);
 	if (philos->number % 2)
 		ft_usleep(philos->philo->time_eat, philos);
@@ -33,9 +45,9 @@ void	philo_eat(t_thr_philo *philos, int *ph_ate)
 	if (sem_wait(philos->philo->forks))
 		exit(5);
 	print_message(philos, "has taken a fork", 1);
-	pthread_mutex_lock(&philos->mt_die);
+	pthread_mutex_lock(&philos->mut_death);
 	philos->when_die += philos->philo->time_die;
-	pthread_mutex_unlock(&philos->mt_die);
+	pthread_mutex_unlock(&philos->mut_death);
 	print_message(philos, "is eating", 1);
 	if (philos->philo->num_time_eat != -555 \
 		&& *ph_ate < philos->philo->num_time_eat)
@@ -57,14 +69,14 @@ void	*when_die(void *tmp_phil)
 	phil = tmp_phil;
 	while (1)
 	{
-		pthread_mutex_lock(&phil->mt_die);
+		pthread_mutex_lock(&phil->mut_death);
 		if (phil->when_die <= get_time(phil->philo))
 		{
 			print_message(phil, "died", 0);
 			exit(0);
 			break ;
 		}
-		pthread_mutex_unlock(&phil->mt_die);
+		pthread_mutex_unlock(&phil->mut_death);
 		usleep(100);
 	}
 	return (NULL);

@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   philo_death.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rantario <rantario@student.21-school.ru>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/26 16:05:07 by rantario          #+#    #+#             */
+/*   Updated: 2022/04/26 16:05:08 by rantario         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "philo.h"
 
 void	*death_1(void *philos)
 {
 	t_thr_philo	*tmp_philos;
-	t_ull	ntime;
+	t_ull		ntime;
 	int			i;
 	int			neat;
 
@@ -32,9 +44,9 @@ int	death_2(t_thr_philo *tmp_philos, t_ull ntime, int *i, int *neat)
 	if (tmp_philos[*i].when_die <= ntime)
 	{
 		pthread_mutex_unlock(&tmp_philos[*i].mut_death);
-		pthread_mutex_lock(&tmp_philos->philo->mt_exit);
+		pthread_mutex_lock(&tmp_philos->philo->mut_exit);
 		tmp_philos->philo->exit = 1;
-		pthread_mutex_unlock(&tmp_philos->philo->mt_exit);
+		pthread_mutex_unlock(&tmp_philos->philo->mut_exit);
 		print_message(&tmp_philos[*i], "died", 0);
 		return (1);
 	}
@@ -50,8 +62,8 @@ int	death_2(t_thr_philo *tmp_philos, t_ull ntime, int *i, int *neat)
 
 void	*death_3(t_thr_philo *tmp_philos)
 {
-	pthread_mutex_lock(&tmp_philos->philo->mt_exit);
+	pthread_mutex_lock(&tmp_philos->philo->mut_exit);
 	tmp_philos->philo->exit = 1;
-	pthread_mutex_unlock(&tmp_philos->philo->mt_exit);
+	pthread_mutex_unlock(&tmp_philos->philo->mut_exit);
 	return (NULL);
 }

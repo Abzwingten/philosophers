@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rantario <rantario@student.21-school.ru>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/26 16:06:27 by rantario          #+#    #+#             */
+/*   Updated: 2022/04/26 16:06:49 by rantario         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "philo_bonus.h"
 
 int	main(int argc, char **argv)
@@ -8,7 +20,7 @@ int	main(int argc, char **argv)
 	int			status;
 
 	i = -1;
-	if (ft_init(argc, argv, &philo, &philos))
+	if (philo_init(argc, argv, &philo, &philos))
 		return (1);
 	while (++i < philo.num_philos)
 	{
@@ -29,14 +41,6 @@ int	main(int argc, char **argv)
 	return (0);
 }
 
-void	th_ate(t_thr_philo *philos)
-{
-	if (pthread_create(&philos->philo->th_ate, NULL, check_ev, philos))
-		ft_close(philos, 7);
-	if (pthread_detach(philos->philo->th_ate))
-		ft_close(philos, 7);
-}
-
 void	ft_close(t_thr_philo *philos, int err)
 {
 	int	i;
@@ -47,7 +51,7 @@ void	ft_close(t_thr_philo *philos, int err)
 	sem_close(philos->philo->forks);
 	sem_close(philos->philo->forks);
 	sem_unlink("forks");
-	sem_unlink("mess");
+	sem_unlink("message");
 	if (philos)
 	{
 		free(philos);

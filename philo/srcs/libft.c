@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rantario <rantario@student.21-school.ru>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/26 16:04:55 by rantario          #+#    #+#             */
+/*   Updated: 2022/04/26 16:04:56 by rantario         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "philo.h"
 
 int	ft_isdigit(int c)
@@ -54,17 +66,17 @@ int	ft_error(int err)
 	return (err);
 }
 
-void	print_m(t_thr_philo *philos, char *str, int flag)
+void	print_message(t_thr_philo *philos, char *str, int flag)
 {
-	pthread_mutex_lock(&philos->philo->mt_mess);
-	pthread_mutex_lock(&philos->philo->mt_exit);
+	pthread_mutex_lock(&philos->philo->mut_message);
+	pthread_mutex_lock(&philos->philo->mut_exit);
 	if (philos->philo->exit && flag)
 	{
-		pthread_mutex_unlock(&philos->philo->mt_exit);
-		pthread_mutex_unlock(&philos->philo->mt_mess);
+		pthread_mutex_unlock(&philos->philo->mut_exit);
+		pthread_mutex_unlock(&philos->philo->mut_message);
 		return ;
 	}
-	pthread_mutex_unlock(&philos->philo->mt_exit);
+	pthread_mutex_unlock(&philos->philo->mut_exit);
 	printf("%llu %d %s\n", get_time(philos->philo), philos->number, str);
-	pthread_mutex_unlock(&philos->philo->mt_mess);
+	pthread_mutex_unlock(&philos->philo->mut_message);
 }

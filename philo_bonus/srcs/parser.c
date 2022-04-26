@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parser.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rantario <rantario@student.21-school.ru>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/26 16:06:32 by rantario          #+#    #+#             */
+/*   Updated: 2022/04/26 16:06:33 by rantario         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "philo_bonus.h"
 
 int	parser(int argc, char **argv, t_philo *philo)
@@ -9,7 +21,7 @@ int	parser(int argc, char **argv, t_philo *philo)
 	overflow = 0;
 	if (argc != 5 && argc != 6)
 		return (ft_error(2));
-	if (verify_argv(argc, argv))
+	if (iterate_args(argc, argv))
 		return (3);
 	philo->num_philos = ft_atoi(argv[i++], &overflow);
 	philo->time_die = ft_atoi(argv[i++], &overflow);
