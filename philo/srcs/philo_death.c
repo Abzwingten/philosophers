@@ -35,7 +35,7 @@ int	death_2(t_thr_philo *tmp_philos, t_ull ntime, int *i, int *neat)
 		pthread_mutex_lock(&tmp_philos->philo->mt_exit);
 		tmp_philos->philo->exit = 1;
 		pthread_mutex_unlock(&tmp_philos->philo->mt_exit);
-		print_m(&tmp_philos[*i], "died", 0);
+		print_message(&tmp_philos[*i], "died", 0);
 		return (1);
 	}
 	pthread_mutex_unlock(&tmp_philos[*i].mut_death);

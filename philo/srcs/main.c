@@ -82,21 +82,6 @@ t_thr_philo	*philo_init(int argc, char **argv, t_philo *philo)
 	return (philos);
 }
 
-void	print_m(t_thr_philo *philos, char *str, int flag)
-{
-	pthread_mutex_lock(&philos->philo->mt_mess);
-	pthread_mutex_lock(&philos->philo->mt_exit);
-	if (philos->philo->exit && flag)
-	{
-		pthread_mutex_unlock(&philos->philo->mt_exit);
-		pthread_mutex_unlock(&philos->philo->mt_mess);
-		return ;
-	}
-	pthread_mutex_unlock(&philos->philo->mt_exit);
-	printf("%llu %d %s\n", get_time(philos->philo), philos->number, str);
-	pthread_mutex_unlock(&philos->philo->mt_mess);
-}
-
 int	main(int argc, char **argv)
 {
 	t_philo		philo;

@@ -3,18 +3,18 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rantario <rantario@student.21-school.ru    +#+  +:+       +#+         #
+#    By: rantario <rantario@student.21-school.ru>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/21 18:47:38 by rantario          #+#    #+#              #
-#    Updated: 2022/04/26 09:59:51 by rantario         ###   ########.fr        #
+#    Updated: 2022/04/26 14:55:29 by rantario         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			:=	philo
 
-SOURCES			:=	./sources
+SOURCES			:=	./srcs
 INCLUDES		:=	./includes
-OBJECTS			:=	./obj
+OBJECTS			:=	./objs
 
 SRCS			:=	main.c \
 					libft.c \

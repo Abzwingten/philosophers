@@ -1,4 +1,4 @@
-#include "philosophers_bonus.h"
+#include "philo_bonus.h"
 
 int	parser(int argc, char **argv, t_philo *philo)
 {
@@ -11,7 +11,7 @@ int	parser(int argc, char **argv, t_philo *philo)
 		return (ft_error(2));
 	if (verify_argv(argc, argv))
 		return (3);
-	philo->num_phils = ft_atoi(argv[i++], &overflow);
+	philo->num_philos = ft_atoi(argv[i++], &overflow);
 	philo->time_die = ft_atoi(argv[i++], &overflow);
 	philo->time_eat = ft_atoi(argv[i++], &overflow);
 	philo->time_sleep = ft_atoi(argv[i++], &overflow);
@@ -19,7 +19,7 @@ int	parser(int argc, char **argv, t_philo *philo)
 		philo->num_time_eat = ft_atoi(argv[i++], &overflow);
 	else
 		philo->num_time_eat = -555;
-	if (!philo->num_phils || !philo->time_die || !philo->time_eat \
+	if (!philo->num_philos || !philo->time_die || !philo->time_eat \
 	|| !philo->time_sleep || !philo->num_time_eat)
 		return (ft_error(7));
 	if (overflow)
@@ -27,27 +27,21 @@ int	parser(int argc, char **argv, t_philo *philo)
 	return (0);
 }
 
-int	ft_error(int err)
+int	check_arg_space(char **args, int *i, int *j)
 {
-	printf("invalid arguments\n");
-	return (err);
-}
-
-int	verify_argv2(char **nums, int *i, int *j)
-{
-	if (!nums[*i][0])
+	if (!args[*i][0])
 		return (1);
-	while (nums[*i][*j] == ' ' || nums[*i][*j] == '\t' || nums[*i][*j] == '\n'
-		|| nums[*i][*j] == '\v' || nums[*i][*j] == '\f' || nums[*i][*j] == '\r')
+	while (args[*i][*j] == ' ' || \
+			(args[*i][*j] >= '\t' && args[*i][*j] <= '\r'))
 		(*j)++;
-	if (nums[*i][*j] == '-' || nums[*i][*j] == '+')
+	if (args[*i][*j] == '-' || args[*i][*j] == '+')
 	{
 		(*j)++;
 	}
 	return (0);
 }
 
-int	verify_argv(int argc, char **argv)
+int	iterate_args(int argc, char **argv)
 {
 	int	i;
 	int	j;
@@ -56,7 +50,7 @@ int	verify_argv(int argc, char **argv)
 	while (++i < argc)
 	{
 		j = 0;
-		if (verify_argv2(argv, &i, &j))
+		if (check_arg_space(argv, &i, &j))
 			return (ft_error(3));
 		while (argv[i][j])
 		{
@@ -66,12 +60,4 @@ int	verify_argv(int argc, char **argv)
 		}
 	}
 	return (0);
-}
-
-int	ft_isdigit(int c)
-{
-	if (c >= '0' && c <= '9')
-		return (1);
-	else
-		return (0);
 }

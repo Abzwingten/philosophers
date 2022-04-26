@@ -24,7 +24,7 @@ void	*philo_loop(void *phil)
 			return (NULL);
 		}
 		pthread_mutex_unlock(&tmp_phil->philo->mt_exit);
-		print_m(phil, "is thinking", 1);
+		print_message(phil, "is thinking", 1);
 	}
 	return (NULL);
 }
@@ -34,7 +34,7 @@ void	thr_eating(t_thr_philo *tmp_phil)
 	pthread_mutex_lock(&tmp_phil->mut_death);
 	tmp_phil->when_die += tmp_phil->philo->time_die;
 	pthread_mutex_unlock(&tmp_phil->mut_death);
-	print_m(tmp_phil, "is eating", 1);
+	print_message(tmp_phil, "is eating", 1);
 	ft_usleep(tmp_phil->philo->time_eat, tmp_phil);
 	philo_sleep(tmp_phil);
 	pthread_mutex_lock(&tmp_phil->philo->mt_exit);
@@ -88,7 +88,7 @@ void	philo_sleep(t_thr_philo *phil)
 		return ;
 	}
 	pthread_mutex_unlock(&phil->philo->mt_exit);
-	print_m(phil, "is sleeping", 1);
+	print_message(phil, "is sleeping", 1);
 	ft_usleep(phil->philo->time_sleep, phil);
 }
 
@@ -102,5 +102,5 @@ void	try_take_fork(pthread_mutex_t *mut_frk, t_thr_philo *philos)
 		return ;
 	}
 	pthread_mutex_unlock(&philos->philo->mt_exit);
-	print_m(philos, "has taken a fork", 1);
+	print_message(philos, "has taken a fork", 1);
 }

@@ -3,28 +3,25 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rantario <rantario@student.21-school.ru    +#+  +:+       +#+         #
+#    By: rantario <rantario@student.21-school.ru>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/21 18:48:42 by rantario          #+#    #+#              #
-#    Updated: 2022/04/21 18:48:43 by rantario         ###   ########.fr        #
+#    Updated: 2022/04/26 15:23:23 by rantario         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			:=	philo_bonus
 
-SOURCES			:=	./sources
+SOURCES			:=	./srcs
 INCLUDES		:=	./includes
-OBJECTS			:=	./obj
+OBJECTS			:=	./objs
 
 SRCS			:=	main.c \
-					ft_libft.c \
-					ft_check.c \
-					ft_parse.c \
-					ft_time.c \
-					ft_print.c \
-					ft_philo.c \
-					ft_philo_actions.c \
-					ft_threads.c
+					init.c \
+					libft.c \
+					parser.c \
+					philo_proc.c \
+					time.c
 
 OBJS			:=	$(addprefix ${OBJECTS}/, $(SRCS:.c=.o))
 

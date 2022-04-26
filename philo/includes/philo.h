@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rantario <rantario@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: rantario <rantario@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 18:46:52 by rantario          #+#    #+#             */
-/*   Updated: 2022/04/26 10:23:04 by rantario         ###   ########.fr       */
+/*   Updated: 2022/04/26 15:22:14 by rantario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <pthread.h>
 # include <unistd.h>
 # include <sys/time.h>
+# include <limits.h>
 
 /* ************************ STRUCTURES ************************ */
 typedef unsigned long long	t_ull;
@@ -73,7 +74,7 @@ void		thr_eating(t_thr_philo *tmp_phil);
 int			philo_destroy(t_thr_philo *philos);
 void		try_take_fork(pthread_mutex_t *mut_frk, t_thr_philo *philos);
 void		*take_forks(t_thr_philo *tmp_phil);
-void		print_m(t_thr_philo *philos, char *str, int flag);
+void		print_message(t_thr_philo *philos, char *str, int flag);
 
 /* ************************** DEATH *************************** */
 void		*death_1(void *philos);
