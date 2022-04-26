@@ -5,9 +5,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
-# Make data base, printed on Tue Apr 26 10:00:12 2022
+# Make data base, printed on Tue Apr 26 18:17:30 2022
 
 # Variables
 
@@ -20,9 +19,9 @@ NO_AT_BRIDGE = 1
 # environment
 GTK_RC_FILES = /etc/gtk/gtkrc:/home/matt/.gtkrc:/home/matt/.config/gtkrc
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-b5a56fc6-ac5e-461d-9dc1-9b67bd64d7b8.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-b504d4ff-fe00-4ca4-83bb-19e3b5bd8825.sock
 # environment
-KONSOLE_DBUS_SERVICE = :1.43
+KONSOLE_DBUS_SERVICE = :1.37
 # environment
 LC_NAME = ru_RU.UTF-8
 # environment
@@ -32,7 +31,7 @@ VSCODE_CWD = /home/matt/Documents/GIT/ECOLE42/philosophers
 # environment
 FZF_CTRL_T_OPTS = --preview 'command bat --color=always --line-range :500 {}' 
 # environment
-WINDOWID = 109051911
+WINDOWID = 88080391
 # environment
 LESS_TERMCAP_me = [0m
 # environment
@@ -102,7 +101,7 @@ PAM_KWALLET5_LOGIN = /run/user/1000/kwallet5.socket
 # environment
 MFLAGS = -pqrR
 # environment
-SSH_AUTH_SOCK = /tmp/ssh-XXXXXXzVve1Q/agent.2387
+SSH_AUTH_SOCK = /tmp/ssh-XXXXXXwDtXMU/agent.1898
 # default
 .SHELLFLAGS := -c
 # environment
@@ -120,7 +119,7 @@ MAKEFILE_LIST := Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 11151
+VSCODE_PID = 7118
 # environment
 XDG_SESSION_TYPE = x11
 # environment
@@ -130,7 +129,7 @@ CUDA_PATH = /opt/cuda
 # environment
 FZF_DEFAULT_COMMAND = command rg -uu -g '!.git' --files
 # environment
-SESSION_MANAGER = local/mattartix:@/tmp/.ICE-unix/1608,unix/mattartix:/tmp/.ICE-unix/1608
+SESSION_MANAGER = local/mattartix:@/tmp/.ICE-unix/1571,unix/mattartix:/tmp/.ICE-unix/1571
 # automatic
 *F = $(notdir $*)
 # environment
@@ -138,7 +137,7 @@ QT_QPA_PLATFORMTHEME = gtk
 # environment
 CHROME_DESKTOP = code-oss.desktop
 # environment
-DBUS_SESSION_BUS_ADDRESS = unix:abstract=/tmp/dbus-4bERYh3NiA,guid=5bc909b3b6c9bef9ce41d256626786d4
+DBUS_SESSION_BUS_ADDRESS = unix:abstract=/tmp/dbus-bu4wtmRTSQ,guid=9c9fdf52958f805571334d306268027d
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # environment
@@ -234,7 +233,7 @@ LC_MEASUREMENT = ru_RU.UTF-8
 # environment
 QT_STYLE_OVERRIDE = gtk2
 # environment
-SSH_AGENT_PID = 2388
+SSH_AGENT_PID = 1899
 # environment
 PAGER = less
 # environment
@@ -280,7 +279,7 @@ VSCODE_CLI = 1
 # environment
 ELECTRON_NO_ATTACH_CONSOLE = 1
 # environment
-SHELL_SESSION_ID = b2a59bfd322a4971bc074317f6f8f7dc
+SHELL_SESSION_ID = 95a09c00252b4b3cae7b9b302485a87e
 # environment
 KDE_SESSION_VERSION = 5
 # default
@@ -296,6 +295,7 @@ LC_IDENTIFICATION = ru_RU.UTF-8
 
 # Pattern-specific Variable Values
 
+ 
 # No pattern-specific variable values.
 
 # Directories
@@ -313,7 +313,6 @@ LC_IDENTIFICATION = ru_RU.UTF-8
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
- 
 #  Last modified 2022-04-21 13:58:06.8818387
 #  File has been updated.
 #  Successfully updated.
@@ -409,6 +408,6 @@ fclean:
 # strcache performance: lookups = 28 / hit rate = 39%
 # hash-table stats:
 # Load=17/8192=0%, Rehash=0, Collisions=0/28=0%
-# Finished Make data base on Tue Apr 26 10:00:12 2022
+# Finished Make data base on Tue Apr 26 18:17:30 2022
 
  
