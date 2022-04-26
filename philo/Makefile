@@ -6,7 +6,7 @@
 #    By: rantario <rantario@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/21 18:47:38 by rantario          #+#    #+#              #
-#    Updated: 2022/04/21 18:47:39 by rantario         ###   ########.fr        #
+#    Updated: 2022/04/26 09:59:51 by rantario         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,14 +17,11 @@ INCLUDES		:=	./includes
 OBJECTS			:=	./obj
 
 SRCS			:=	main.c \
-					ft_libft.c \
-					ft_check.c \
-					ft_parse.c \
-					ft_time.c \
-					ft_print.c \
-					ft_philo.c \
-					ft_philo_actions.c \
-					ft_threads.c
+					libft.c \
+					parser.c \
+					time.c \
+					philo_thr.c \
+					philo_death.c
 
 OBJS			:=	$(addprefix ${OBJECTS}/, $(SRCS:.c=.o))
 

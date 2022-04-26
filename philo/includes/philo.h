@@ -6,106 +6,82 @@
 /*   By: rantario <rantario@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 18:46:52 by rantario          #+#    #+#             */
-/*   Updated: 2022/04/21 18:46:53 by rantario         ###   ########.fr       */
+/*   Updated: 2022/04/26 10:23:04 by rantario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/* ************************* INCLUDES ************************* */
 
 #ifndef PHILO_H
 # define PHILO_H
 
-/************************** INCLUDES ************************* */
-# include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <pthread.h>
-# include <string.h>
-# include <errno.h>
+# include <unistd.h>
 # include <sys/time.h>
 
-/************************** DEFINES ************************** */
-# define MIN_ARGS 4
-# define MAX_ARGS 5
-
-# define HAS_TAKEN_A_FORK "has taken a fork"
-# define IS_EATING "is eating"
-# define IS_SLEEPING "is sleeping"
-# define IS_THINKING "is thinking"
-# define HAS_DIED "died"
-
-/************************* STRUCTURES ************************ */
-typedef struct timeval	t_timeval;
+/* ************************ STRUCTURES ************************ */
+typedef unsigned long long	t_ull;
 
 typedef struct s_philo
 {
-	size_t			id;
-	pthread_t		thread;
-
-	pthread_mutex_t	*lfork;
-	pthread_mutex_t	*rfork;
-
-	int				eating;
-	size_t			last_eat;
-	int				n_eat;
-	int				sleeping;
-
-	struct s_table	*table;
+	int				num_philos;
+	int				time_die;
+	int				time_eat;
+	int				time_sleep;
+	int				num_time_eat;
+	int				exit;
+	t_ull			start_t;
+	struct timeval	tv;
+	pthread_t		th_die;
+	pthread_mutex_t	mt_mess;
+	pthread_mutex_t	mut_eat_c;
+	pthread_mutex_t	mt_exit;
 }	t_philo;
 
-typedef struct s_table
+typedef struct s_thr_philo
 {
-	pthread_mutex_t	*forks;
-	t_philo			*philos;
-	size_t			count;
+	pthread_t		philo_loop;
+	pthread_mutex_t	mut_frk;
+	pthread_mutex_t	mut_death;
+	int				number;
+	int				eat_num;
+	t_ull			when_die;
+	t_philo			*philo;
+}	t_thr_philo;
 
-	size_t			time_to_sleep;
-	size_t			time_to_eat;
-	size_t			time_to_die;
-	int				min_to_eat;
-	int				death;
-
-	t_timeval		time;
-	pthread_mutex_t	is_dying;
-	pthread_mutex_t	is_printing;
-}	t_table;
-
-
-
-/* ********************** INPUT / OUTPUT ********************** */
-void		print(t_philo *philo, char *message);
-int			print_err(char *where, char *message, int code);
+/* ********************** CHECK / PARSE *********************** */
+int			parser(int argc, char **argv, t_philo *philo);
+int			ft_error(int err);
+int			check_arg_space(char **args, int *i, int *j);
+int			iterate_args(int argc, char **argv);
 
 /* ************************** LIBFT *************************** */
 int			ft_isdigit(int c);
-int			ft_isspace(int c);
-int			ft_atoi(const char *str);
+int			ft_atoi(const char *str, int *overflow);
+int			is_space(const char *str, int *sign, int *overflow);
 
-/*********************** CHECK / PARSE *********************** */
-int			check_args(int ac, char **av);
-int			check_int(const char *str);
-int			check_negative(const char *str);
-t_table		*parse(int ac, char **av);
+/* ************************* THREADS ************************** */
+int			create_threads(t_thr_philo *philos, t_philo *philo);
 
-/************************** THREADS ************************** */
-void		threads_start(t_table *table);
-void		threads_wait(t_table *table);
+/* ************************** PHILOS ************************** */
+t_thr_philo	*philo_init(int argc, char **argv, t_philo *philo);
+void		philo_sleep(t_thr_philo *phil);
+void		*philo_loop(void *phil);
+void		thr_eating(t_thr_philo *tmp_phil);
+int			philo_destroy(t_thr_philo *philos);
+void		try_take_fork(pthread_mutex_t *mut_frk, t_thr_philo *philos);
+void		*take_forks(t_thr_philo *tmp_phil);
+void		print_m(t_thr_philo *philos, char *str, int flag);
 
-/*************************** PHILOS ************************** */
-void		philo_init(t_philo *philo, t_table *table, int id);
-void		philo_init_forks(t_philo *philo, t_table *table, int id);
-void		*philo_routine(void *data);
-void		philo_use_fork(t_philo *philo, \
-							int (*mutex_action)(), char *msg);
-void		philo_eat(t_philo *philo);
-void		philo_sleep(t_philo *philo);
-void		philo_think(t_philo *philo);
-size_t		philo_check_eat(t_table *table);
-void		philo_check_death(t_table *table);
+/* ************************** DEATH *************************** */
+void		*death_1(void *philos);
+int			death_2(t_thr_philo *tmp_philos, t_ull ntime, int *i, int *neat);
+void		*death_3(t_thr_philo *tmp_philos);
 
-/**************************** TIME *************************** */
-t_timeval	time_get_now(void);
-size_t		time_get_millis(struct timeval time);
-size_t		time_get_millis_now(void);
-size_t		time_get_millis_from_start(t_table *table);
-void		ft_usleep(size_t usec);
+/* *************************** TIME *************************** */
+void		ft_usleep(t_ull ms, t_thr_philo *philos);
+t_ull		get_time(t_philo *philo);
 
 #endif

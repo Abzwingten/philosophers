@@ -1,109 +1,59 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   philo_bonus.h                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: rantario <rantario@student.21-school.ru    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/21 18:47:43 by rantario          #+#    #+#             */
-/*   Updated: 2022/04/21 18:47:44 by rantario         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef PHILO_BONUS_H
 # define PHILO_BONUS_H
 
-/* ************************* INCLUDES ************************* */
-# include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <pthread.h>
-# include <string.h>
-# include <errno.h>
-# include <fcntl.h>
+# include <unistd.h>
 # include <sys/time.h>
 # include <sys/stat.h>
+# include <fcntl.h>
 # include <semaphore.h>
+# include <signal.h>
 
-/* ************************* DEFINES ************************** */
-# define MIN_ARGS 4
-# define MAX_ARGS 5
+typedef unsigned long long	t_big_num;
 
-# define HAS_TAKEN_A_FORK "has taken a fork"
-# define IS_EATING "is eating"
-# define IS_SLEEPING "is sleeping"
-# define IS_THINKING "is thinking"
-# define HAS_DIED "died"
+typedef struct s_envph {
+	int					num_phils;
+	int					time_die;
+	int					time_eat;
+	int					time_sleep;
+	int					num_time_eat;
+	t_big_num			start_t;
+	struct timeval		tv;
+	pthread_t			th_ate;
+	pthread_mutex_t		mt_ate;
+	sem_t				*forks;
+	sem_t				*mess;
+	sem_t				*ev_ate;
+}	t_envph;
 
-/* ************************ STRUCTURES ************************ */
-typedef struct timeval	t_timeval;
+typedef struct s_th_phil {
+	int					number;
+	pid_t				ph_p;
+	t_big_num			when_die;
+	pthread_t			th_die;
+	pthread_mutex_t		mt_die;
+	t_envph				*envph;
+}	t_th_phil;
 
-typedef struct s_philo
-{
-	size_t			id;
-	pthread_t		thread;
-
-	int				eating;
-	size_t			last_eat;
-	int				n_eat;
-	int				sleeping;
-
-	struct s_table	*table;
-}	t_philo;
-
-typedef struct s_table
-{
-	sem_t		*forks;
-	t_philo		*philos;
-	size_t		count;
-
-	size_t		time_to_sleep;
-	size_t		time_to_eat;
-	size_t		time_to_die;
-	int			min_to_eat;
-	int			death;
-
-	t_timeval	time;
-	sem_t		*is_dying;
-	sem_t		*is_printing;
-}	t_table;
-
-/* ********************** INPUT / OUTPUT ********************** */
-void		print(t_philo *philo, char *message);
-int			print_err(char *where, char *message, int code);
-
-/* ************************** LIBFT *************************** */
+int			parser(int argc, char **argv, t_envph *envph);
+int			ft_error(int err);
+int			verify_argv2(char **nums, int *i, int *j);
+int			verify_argv(int argc, char **argv);
 int			ft_isdigit(int c);
-int			ft_isspace(int c);
-int			ft_atoi(const char *str);
-
-/* ********************** CHECK / PARSE *********************** */
-int			check_args(int ac, char **av);
-int			check_int(const char *str);
-int			check_negative(const char *str);
-t_table		*parse(int ac, char **av);
-
-/* ************************* THREADS ************************** */
-void		threads_start(t_table *table);
-void		threads_wait(t_table *table);
-
-/* ************************** PHILOS ************************** */
-void		philo_init(t_philo *philo, t_table *table, int id);
-void		philo_init_forks(t_philo *philo, t_table *table, int id);
-void		*philo_routine(void *data);
-void		philo_use_fork(t_philo *philo, \
-								int (*mutex_action)(), char *msg);
-void		philo_eat(t_philo *philo);
-void		philo_sleep(t_philo *philo);
-void		philo_think(t_philo *philo);
-size_t		philo_check_eat(t_table *table);
-void		philo_check_death(t_table *table);
-
-/* *************************** TIME *************************** */
-t_timeval	time_get_now(void);
-size_t		time_get_millis(struct timeval time);
-size_t		time_get_millis_now(void);
-size_t		time_get_millis_from_start(t_table *table);
-void		ft_usleep(size_t usec);
+int			ft_atoi(const char *str, int *overflow);
+int			skipp(const char *str, int *sign, int *overflow);
+void		ph_proc(t_th_phil *phils);
+t_big_num	get_time(t_envph *envph);
+void		*when_die(void *tmp_phil);
+int			ph_dead(t_th_phil *phils);
+void		print_m(t_th_phil *phils, char *str, int flag);
+void		ft_usleep(t_big_num ms, t_th_phil *phils);
+void		ft_close(t_th_phil *phils, int err);
+void		*check_ev(void	*tmp_phils);
+int			ft_init(int argc, char **argv, t_envph *envph, t_th_phil **phils);
+void		th_ate(t_th_phil *phils);
+void		phil_is_eating(t_th_phil *phils, int *ph_ate);
 
 #endif

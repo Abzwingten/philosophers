@@ -5,8 +5,9 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
-# Make data base, printed on Thu Apr 21 18:47:40 2022
+# Make data base, printed on Tue Apr 26 10:00:12 2022
 
 # Variables
 
@@ -19,9 +20,9 @@ NO_AT_BRIDGE = 1
 # environment
 GTK_RC_FILES = /etc/gtk/gtkrc:/home/matt/.gtkrc:/home/matt/.config/gtkrc
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-7d4f4b26-07af-463a-aabb-61347e759506.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-b5a56fc6-ac5e-461d-9dc1-9b67bd64d7b8.sock
 # environment
-KONSOLE_DBUS_SERVICE = :1.44
+KONSOLE_DBUS_SERVICE = :1.43
 # environment
 LC_NAME = ru_RU.UTF-8
 # environment
@@ -31,7 +32,7 @@ VSCODE_CWD = /home/matt/Documents/GIT/ECOLE42/philosophers
 # environment
 FZF_CTRL_T_OPTS = --preview 'command bat --color=always --line-range :500 {}' 
 # environment
-WINDOWID = 106954759
+WINDOWID = 109051911
 # environment
 LESS_TERMCAP_me = [0m
 # environment
@@ -43,7 +44,7 @@ GOPATH = /home/matt/Documents/GIT/go
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # environment
-KONSOLE_VERSION = 211203
+KONSOLE_VERSION = 220400
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
@@ -84,6 +85,8 @@ COLORFGBG = 15;0
 MAKEFLAGS = pqrR
 # environment
 LESS_TERMCAP_so = [7m
+# environment
+ANDROID_NDK_HOME = /opt/android-ndk
 # makefile
 CURDIR := /home/matt/Documents/GIT/ECOLE42/philosophers
 # environment
@@ -99,16 +102,15 @@ PAM_KWALLET5_LOGIN = /run/user/1000/kwallet5.socket
 # environment
 MFLAGS = -pqrR
 # environment
-SSH_AUTH_SOCK = /tmp/ssh-XXXXXXK4AHwL/agent.2387
+SSH_AUTH_SOCK = /tmp/ssh-XXXXXXzVve1Q/agent.2387
 # default
 .SHELLFLAGS := -c
 # environment
 XDG_CONFIG_DIRS = /home/matt/.config/kdedefaults:/etc/xdg
- 
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # environment
-XCURSOR_THEME = breeze_cursors
+XCURSOR_THEME = Dracula-cursors
 # environment
 XDG_SESSION_DESKTOP = KDE
 # makefile (from 'Makefile', line 1)
@@ -118,7 +120,7 @@ MAKEFILE_LIST := Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 30781
+VSCODE_PID = 11151
 # environment
 XDG_SESSION_TYPE = x11
 # environment
@@ -128,7 +130,7 @@ CUDA_PATH = /opt/cuda
 # environment
 FZF_DEFAULT_COMMAND = command rg -uu -g '!.git' --files
 # environment
-SESSION_MANAGER = local/mattartix:@/tmp/.ICE-unix/1577,unix/mattartix:/tmp/.ICE-unix/1577
+SESSION_MANAGER = local/mattartix:@/tmp/.ICE-unix/1608,unix/mattartix:/tmp/.ICE-unix/1608
 # automatic
 *F = $(notdir $*)
 # environment
@@ -136,7 +138,7 @@ QT_QPA_PLATFORMTHEME = gtk
 # environment
 CHROME_DESKTOP = code-oss.desktop
 # environment
-DBUS_SESSION_BUS_ADDRESS = unix:abstract=/tmp/dbus-BSc93Mw1DE,guid=031efe2ab5e74e2d644da9b66260f8e0
+DBUS_SESSION_BUS_ADDRESS = unix:abstract=/tmp/dbus-4bERYh3NiA,guid=5bc909b3b6c9bef9ce41d256626786d4
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # environment
@@ -152,13 +154,15 @@ MAKECMDGOALS := all
 # environment
 SHLVL = 1
 # environment
+ANDROID_NDK = /opt/android-ndk
+# environment
 PROFILEHOME = /home/matt
 # environment
 MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = /usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/go/bin:/opt/android-sdk/platform-tools:/opt/cuda/bin:/opt/cuda/nsight_compute:/opt/cuda/nsight_systems/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/bin:/home/matt/Documents/GIT/go/bin
+PATH = /usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/go/bin:/opt/android-ndk:/opt/android-sdk/platform-tools:/opt/cuda/bin:/opt/cuda/nsight_compute:/opt/cuda/nsight_systems/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/bin:/home/matt/Documents/GIT/go/bin
 # environment
 LESS_TERMCAP_se = [27m
 # default
@@ -276,7 +280,7 @@ VSCODE_CLI = 1
 # environment
 ELECTRON_NO_ATTACH_CONSOLE = 1
 # environment
-SHELL_SESSION_ID = 82a8928baff1406e85a0f50e7a330815
+SHELL_SESSION_ID = b2a59bfd322a4971bc074317f6f8f7dc
 # environment
 KDE_SESSION_VERSION = 5
 # default
@@ -288,7 +292,7 @@ QTWEBENGINE_CHROMIUM_FLAGS = -blink-settings=darkModeEnabled=true -enable-featur
 # environment
 LC_IDENTIFICATION = ru_RU.UTF-8
 # variable set hash-table stats:
-# Load=138/1024=13%, Rehash=0, Collisions=18/171=11%
+# Load=140/1024=14%, Rehash=0, Collisions=18/173=10%
 
 # Pattern-specific Variable Values
 
@@ -309,6 +313,7 @@ LC_IDENTIFICATION = ru_RU.UTF-8
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
+ 
 #  Last modified 2022-04-21 13:58:06.8818387
 #  File has been updated.
 #  Successfully updated.
@@ -403,8 +408,7 @@ fclean:
 
 # strcache performance: lookups = 28 / hit rate = 39%
 # hash-table stats:
- 
 # Load=17/8192=0%, Rehash=0, Collisions=0/28=0%
-# Finished Make data base on Thu Apr 21 18:47:40 2022
+# Finished Make data base on Tue Apr 26 10:00:12 2022
 
  
