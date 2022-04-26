@@ -1,6 +1,6 @@
 #include "philosophers_bonus.h"
 
-int	parser(int argc, char **argv, t_envph *envph)
+int	parser(int argc, char **argv, t_philo *philo)
 {
 	int	i;
 	int	overflow;
@@ -11,16 +11,16 @@ int	parser(int argc, char **argv, t_envph *envph)
 		return (ft_error(2));
 	if (verify_argv(argc, argv))
 		return (3);
-	envph->num_phils = ft_atoi(argv[i++], &overflow);
-	envph->time_die = ft_atoi(argv[i++], &overflow);
-	envph->time_eat = ft_atoi(argv[i++], &overflow);
-	envph->time_sleep = ft_atoi(argv[i++], &overflow);
+	philo->num_phils = ft_atoi(argv[i++], &overflow);
+	philo->time_die = ft_atoi(argv[i++], &overflow);
+	philo->time_eat = ft_atoi(argv[i++], &overflow);
+	philo->time_sleep = ft_atoi(argv[i++], &overflow);
 	if (argc == 6)
-		envph->num_time_eat = ft_atoi(argv[i++], &overflow);
+		philo->num_time_eat = ft_atoi(argv[i++], &overflow);
 	else
-		envph->num_time_eat = -555;
-	if (!envph->num_phils || !envph->time_die || !envph->time_eat \
-	|| !envph->time_sleep || !envph->num_time_eat)
+		philo->num_time_eat = -555;
+	if (!philo->num_phils || !philo->time_die || !philo->time_eat \
+	|| !philo->time_sleep || !philo->num_time_eat)
 		return (ft_error(7));
 	if (overflow)
 		return (ft_error(9));
